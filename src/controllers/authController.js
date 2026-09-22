@@ -43,7 +43,7 @@ exports.login = async (req, res) => {
     const { email, senha } = req.body;
     console.log("--> Tentativa de login para:", email);
 
-    const usuario = await Usuario.findOne({ where: { email: email.trim().toLowerCase() } });
+    const usuario = await User.findOne({ where: { email: email.trim().toLowerCase() } });
     if (!usuario) {
       console.log("--> Usuário não encontrado no MySQL");
       return res.status(401).json({ message: 'E-mail ou senha inválidos' });
