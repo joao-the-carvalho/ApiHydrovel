@@ -11,6 +11,8 @@ const userRoutes = require('./src/routes/userRoutes');
 const sensorRoutes = require('./src/routes/sensorRoutes');
 
 app.use(cors());
+
+connectMongo();
 app.use(express.json());
 sequelize.sync({ alter: true }).then(() => {
   console.log("Banco de dados sincronizado!");
