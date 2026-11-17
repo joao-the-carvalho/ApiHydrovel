@@ -1,6 +1,5 @@
 const sequelize = require('../config/database');
-const defineUser = require('../models/mysql/User');
-const Usuario = typeof defineUser === 'function';
+const Usuario = require('../models/mysql/User');
 
 exports.getUsuario = async (req, res) => {
   const usuario = await Usuario.findByPk(req.params.id);
